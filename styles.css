@@ -1,0 +1,147 @@
+/* Overall styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f3f4f6;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Background */
+.background {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #ffecd2, #fcb69f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Box container */
+.box-container {
+  position: relative;
+}
+
+/* Box styling */
+.box {
+  position: relative;
+  width: 300px; /* Increase width*/
+  height: 300px; /* Increase height*/
+  background: #ff6f61;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.lid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #ff9472;
+  border-radius: 15px 15px 0 0;
+  transform-origin: top;
+  transition: transform 1s ease-in-out;
+}
+
+.box-content {
+  position: absolute;
+  top: 60px; /* Position it below the lid */
+  left: 0;
+  width: 100%; /* Ensures the content fills the box width */
+  height: 190px; /* Adjust height if needed */
+  background: #ffcccb;
+  color: #333;
+  padding: 20px;
+  text-align: center; /* Center the text horizontally */
+  display: none; /* Hidden until the box opens */
+  overflow: hidden; /* Prevents text overflow */
+  overflow-y: auto; /* Enables scrolling horizontally */
+}
+
+.box-content h1 {
+  margin: 0;
+  font-size: 22px; /* Adjust font size */
+  color: #ffffff;
+  word-wrap: break-word; /* Ensures long text wraps */
+}
+
+.box-content p {
+  margin: 10px 0;
+  font-size: 14px; /* Smaller font size for better fit */
+  line-height: 1.4; /* Increase line spacing */
+  color: #f56a79;
+  word-wrap: break-word; /* Ensure long text wraps */
+}
+
+.flower {
+  margin: 15px 5px; /* Adjust margins between flowers */
+}
+
+/* Flower styles */
+.flower {
+  width: 30px;
+  height: 30px;
+  background: #f4a261;
+  border-radius: 50%;
+  margin: 10px auto;
+  display: inline-block;
+  animation: bloom 2s ease-in-out forwards;
+}
+
+.flower:after, .flower:before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #f7a285;
+}
+
+.flower1:after { transform: translate(-20px, -10px); }
+.flower1:before { transform: translate(20px, 10px); }
+.flower2:after { transform: translate(-15px, 15px); }
+.flower2:before { transform: translate(15px, -15px); }
+.flower3:after { transform: translate(-20px, -10px); }
+.flower3:before { transform: translate(20px, 10px); }
+
+/* Animation for flowers */
+@keyframes bloom {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Button */
+.open-button {
+  position: absolute;
+  bottom: 30px;
+  padding: 15px 30px;
+  background: #6a0572;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.open-button:hover {
+  background: #8e44ad;
+  transform: translateY(-3px);
+}
+
+.open-button:active {
+  transform: translateY(1px);
+}
